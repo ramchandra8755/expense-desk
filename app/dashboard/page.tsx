@@ -521,7 +521,7 @@ export default function DashboardPage() {
               </p>
             </div>
 
-            <div className="hidden items-center gap-1 lg:flex">
+            <div className="flex items-center gap-1">
               <a
                 href="#overview"
                 className="flex items-center gap-2 rounded-xl bg-white/5 px-4 py-2 text-sm font-semibold text-white transition hover:bg-indigo-600/20"
@@ -667,9 +667,13 @@ export default function DashboardPage() {
             <a href="#analytics" className="whitespace-nowrap rounded-lg bg-white/5 px-3 py-2 text-xs font-semibold text-slate-300">
               Analytics
             </a>
-            <a href="#reports" className="whitespace-nowrap rounded-lg bg-white/5 px-3 py-2 text-xs font-semibold text-slate-300">
+            <button
+              type="button"
+              onClick={() => setReportsOpen((open) => !open)}
+              className="whitespace-nowrap rounded-lg bg-white/5 px-3 py-2 text-xs font-semibold text-slate-300"
+            >
               Reports
-            </a>
+            </button>
           </div>
         </nav>
 
