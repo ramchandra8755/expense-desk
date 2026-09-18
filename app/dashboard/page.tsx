@@ -521,7 +521,7 @@ export default function DashboardPage() {
               </p>
             </div>
 
-            <div className="flex items-center gap-1">
+            <div className="hidden items-center gap-1 lg:flex">
               <a
                 href="#overview"
                 className="flex items-center gap-2 rounded-xl bg-white/5 px-4 py-2 text-sm font-semibold text-white transition hover:bg-indigo-600/20"
@@ -552,17 +552,30 @@ export default function DashboardPage() {
             >
               Reports
             </button>
+            </div>
 
             {reportsOpen && (
-            <div className="absolute right-20 top-16 z-50 w-[360px] rounded-2xl border border-white/10 bg-slate-900 p-5 shadow-2xl backdrop-blur-xl">
+            <div className="absolute left-4 right-4 top-20 z-[9999] rounded-2xl border border-white/10 bg-slate-900 p-5 shadow-2xl backdrop-blur-xl sm:left-auto sm:right-6 sm:w-[360px]">
 
-              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-indigo-300">
-                Reports
-              </p>
+             <div className="flex items-start justify-between">
+                <div>
+                  <p className="text-xs font-semibold uppercase tracking-[0.2em] text-indigo-300">
+                    Reports
+                  </p>
 
-              <h3 className="mt-2 text-xl font-bold text-white">
-                Export Financial Report
-              </h3>
+                  <h3 className="mt-2 text-xl font-bold text-white">
+                    Export Financial Report
+                  </h3>
+                </div>
+
+                <button
+                  type="button"
+                  onClick={() => setReportsOpen(false)}
+                  className="rounded-lg px-2 py-1 text-lg text-slate-400 transition hover:bg-white/10 hover:text-white"
+                >
+                  ✕
+                </button>
+              </div>
 
               <div className="mt-5 grid gap-4">
 
@@ -613,7 +626,6 @@ export default function DashboardPage() {
               </div>
             </div>
           )}
-            </div>
 
             <div className="relative shrink-0">
               <button
